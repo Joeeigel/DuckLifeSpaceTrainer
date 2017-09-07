@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SimpleInjector;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +9,8 @@ namespace DLSpaceTrainer
 {
     static class Program
     {
+        public static Container container;
+        
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +19,18 @@ namespace DLSpaceTrainer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Bootstrap();
+            Application.Run(container.GetInstance<Form1>());
+        }
+
+        private static void Bootstrap()
+        {
+            // Create the container as usual.
+            container = new Container();
+
+            // Register your types, for instance:
+            //container.Register<IRepositoryService, RepositoryService>();
+            container.Register<Form1>();
         }
     }
 }
