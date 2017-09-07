@@ -1,4 +1,5 @@
-﻿using SimpleInjector;
+﻿using DLSpaceTrainer.Services;
+using SimpleInjector;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace DLSpaceTrainer
             container = new Container();
 
             // Register your types, for instance:
-            //container.Register<IRepositoryService, RepositoryService>();
+            container.Register<IRegistryService, RegistryService>();
             container.Register<Form1>();
         }
     }
