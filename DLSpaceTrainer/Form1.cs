@@ -94,7 +94,7 @@ namespace DLSpaceTrainer
         {
             ///TODO:
             ///Make this less garbage
-            if (key.Contains("1"))
+            if (key.Contains("1"))  
                 btnUnlockEarth.Text = "Lock Earth";
             if (key.Contains("2"))
                 btnUnlockMoon.Text = "Lock Moon";
@@ -118,7 +118,7 @@ namespace DLSpaceTrainer
                         MessageBox.Show(string.Format("Error locking level {0}", key));
             }
             else
-                _registryService.SetKey(mapKey, true);
+                _registryService.SetKeyValue(mapKey, true);
 
             SetupButtons();
         }
@@ -127,7 +127,26 @@ namespace DLSpaceTrainer
 
         private void btnSurfsUp_Click(object sender, EventArgs e)
         {
-            _registryService.SetKey("duckData1_costume", 2);
+            _registryService.SetKeyValue("duckData1_costume", 2);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            var key = _registryService.ListValues().Where(x => x.Contains("1.run_exp")).First();
+
+            if(_registryService.GetKeyValue(key).ToString() != lblRunExp.Text)
+                _registryService.GetKeyValue(key);
+
+            lblRunExp.Text = _registryService.GetKeyValue(key).ToString();
+        }
+
+        private void btnIncRunExp_Click(object sender, EventArgs e)
+        {
+            var key = _registryService.ListValues().Where(x => x.Contains("1.run_exp")).FirstOrDefault();
+
+            UInt64 currentExp = (ulong)_registryService.GetKeyValue(key);
+            
+            _registryService.SetKeyValue(key, (long)currentExp + 20000000000000000);
         }
     }
 }

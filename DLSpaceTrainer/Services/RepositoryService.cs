@@ -11,12 +11,12 @@ namespace DLSpaceTrainer.Services
     {
         private RegistryKey regKey = Registry.CurrentUser.OpenSubKey("Software\\Mofunzone\\Duck Life: Space", true);
 
-        public Dictionary<string, string> GetKey(string key)
+        public object GetKeyValue(string key)
         {
-            return new Dictionary<string, string>();
+            return regKey.GetValue(key);
         }
 
-        public void SetKey(string key, object value)
+        public void SetKeyValue(string key, object value)
         {
             var matchingKeys = ListValues().Where(x => x.StartsWith(key));
 
@@ -45,9 +45,9 @@ namespace DLSpaceTrainer.Services
 
     public interface IRegistryService
     {
-        void SetKey(string key, object value);
+        void SetKeyValue(string key, object value);
         bool DeleteKey(string key);
-        Dictionary<string, string> GetKey(string key);
+        object GetKeyValue(string key);
         IList<string> ListValues();
 
     }

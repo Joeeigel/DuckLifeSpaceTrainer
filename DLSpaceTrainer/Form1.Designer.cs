@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnUnlockEarth = new System.Windows.Forms.Button();
             this.btnUnlockMoon = new System.Windows.Forms.Button();
@@ -38,6 +39,9 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblUnlockLevels = new System.Windows.Forms.Label();
             this.btnSurfsUp = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lblRunExp = new System.Windows.Forms.Label();
+            this.btnIncRunExp = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,11 +150,37 @@
             this.btnSurfsUp.UseVisualStyleBackColor = true;
             this.btnSurfsUp.Click += new System.EventHandler(this.btnSurfsUp_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // lblRunExp
+            // 
+            this.lblRunExp.AutoSize = true;
+            this.lblRunExp.Location = new System.Drawing.Point(260, 277);
+            this.lblRunExp.Name = "lblRunExp";
+            this.lblRunExp.Size = new System.Drawing.Size(35, 13);
+            this.lblRunExp.TabIndex = 3;
+            this.lblRunExp.Text = "label1";
+            // 
+            // btnIncRunExp
+            // 
+            this.btnIncRunExp.Location = new System.Drawing.Point(197, 100);
+            this.btnIncRunExp.Name = "btnIncRunExp";
+            this.btnIncRunExp.Size = new System.Drawing.Size(75, 23);
+            this.btnIncRunExp.TabIndex = 4;
+            this.btnIncRunExp.Text = "Add Run XP";
+            this.btnIncRunExp.UseVisualStyleBackColor = true;
+            this.btnIncRunExp.Click += new System.EventHandler(this.btnIncRunExp_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(358, 376);
+            this.Controls.Add(this.btnIncRunExp);
+            this.Controls.Add(this.lblRunExp);
             this.Controls.Add(this.btnSurfsUp);
             this.Controls.Add(this.lblUnlockLevels);
             this.Controls.Add(this.lblTitle);
@@ -175,6 +205,9 @@
         private System.Windows.Forms.Button btnUnlockFreez;
         private System.Windows.Forms.Button btnUnlockPyro;
         private System.Windows.Forms.Button btnSurfsUp;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblRunExp;
+        private System.Windows.Forms.Button btnIncRunExp;
     }
 }
 
