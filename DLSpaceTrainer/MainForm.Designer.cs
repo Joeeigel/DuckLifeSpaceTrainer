@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnUnlockEarth = new System.Windows.Forms.Button();
             this.btnUnlockMoon = new System.Windows.Forms.Button();
@@ -39,9 +38,6 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblUnlockLevels = new System.Windows.Forms.Label();
             this.btnSurfsUp = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.lblRunExp = new System.Windows.Forms.Label();
-            this.btnIncRunExp = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,44 +138,24 @@
             // btnSurfsUp
             // 
             this.btnSurfsUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnSurfsUp.Location = new System.Drawing.Point(7, 341);
+            this.btnSurfsUp.Location = new System.Drawing.Point(7, 287);
             this.btnSurfsUp.Name = "btnSurfsUp";
             this.btnSurfsUp.Size = new System.Drawing.Size(75, 23);
             this.btnSurfsUp.TabIndex = 2;
             this.btnSurfsUp.Text = "Surfs Up!";
             this.btnSurfsUp.UseVisualStyleBackColor = true;
             this.btnSurfsUp.Click += new System.EventHandler(this.btnSurfsUp_Click);
-         // 
-            // lblRunExp
             // 
-            this.lblRunExp.AutoSize = true;
-            this.lblRunExp.Location = new System.Drawing.Point(260, 277);
-            this.lblRunExp.Name = "lblRunExp";
-            this.lblRunExp.Size = new System.Drawing.Size(35, 13);
-            this.lblRunExp.TabIndex = 3;
-            this.lblRunExp.Text = "label1";
-            // 
-            // btnIncRunExp
-            // 
-            this.btnIncRunExp.Location = new System.Drawing.Point(197, 100);
-            this.btnIncRunExp.Name = "btnIncRunExp";
-            this.btnIncRunExp.Size = new System.Drawing.Size(75, 23);
-            this.btnIncRunExp.TabIndex = 4;
-            this.btnIncRunExp.Text = "Add Run XP";
-            this.btnIncRunExp.UseVisualStyleBackColor = true;
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 376);
-            this.Controls.Add(this.btnIncRunExp);
-            this.Controls.Add(this.lblRunExp);
+            this.ClientSize = new System.Drawing.Size(358, 322);
             this.Controls.Add(this.btnSurfsUp);
             this.Controls.Add(this.lblUnlockLevels);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Duck Life Space Trainer";
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -199,9 +175,6 @@
         private System.Windows.Forms.Button btnUnlockFreez;
         private System.Windows.Forms.Button btnUnlockPyro;
         private System.Windows.Forms.Button btnSurfsUp;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label lblRunExp;
-        private System.Windows.Forms.Button btnIncRunExp;
     }
 }
 
