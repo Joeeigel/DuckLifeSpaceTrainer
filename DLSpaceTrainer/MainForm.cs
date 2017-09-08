@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace DLSpaceTrainer
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         #region Dependencies
 
@@ -21,7 +21,7 @@ namespace DLSpaceTrainer
 
         #region Constructor
 
-        public Form1(IRegistryService registryService)
+        public MainForm(IRegistryService registryService)
         {
             _registryService = registryService;
 
@@ -69,6 +69,11 @@ namespace DLSpaceTrainer
         {
             var mapKey = "unlockmap6";
             handleButton(mapKey);
+        }
+        
+        private void btnSurfsUp_Click(object sender, EventArgs e)
+        {
+            _registryService.SetKeyValue("duckData1_costume", 2);
         }
 
         #endregion
@@ -125,28 +130,5 @@ namespace DLSpaceTrainer
 
         #endregion
 
-        private void btnSurfsUp_Click(object sender, EventArgs e)
-        {
-            _registryService.SetKeyValue("duckData1_costume", 2);
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            var key = _registryService.ListValues().Where(x => x.Contains("1.run_exp")).First();
-
-            if(_registryService.GetKeyValue(key).ToString() != lblRunExp.Text)
-                _registryService.GetKeyValue(key);
-
-            lblRunExp.Text = _registryService.GetKeyValue(key).ToString();
-        }
-
-        private void btnIncRunExp_Click(object sender, EventArgs e)
-        {
-            var key = _registryService.ListValues().Where(x => x.Contains("1.run_exp")).FirstOrDefault();
-
-            UInt64 currentExp = (ulong)_registryService.GetKeyValue(key);
-            
-            _registryService.SetKeyValue(key, (long)currentExp + 20000000000000000);
-        }
     }
 }

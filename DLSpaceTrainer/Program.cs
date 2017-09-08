@@ -21,7 +21,7 @@ namespace DLSpaceTrainer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Bootstrap();
-            Application.Run(container.GetInstance<Form1>());
+            Application.Run(container.GetInstance<MainForm>());
         }
 
         private static void Bootstrap()
@@ -31,7 +31,7 @@ namespace DLSpaceTrainer
 
             // Register your types, for instance:
             container.Register<IRegistryService, RegistryService>();
-            container.Register<Form1>();
+            container.Register<MainForm>();
         }
     }
 }

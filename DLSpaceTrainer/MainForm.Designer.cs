@@ -1,6 +1,6 @@
 ﻿namespace DLSpaceTrainer
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -149,12 +149,7 @@
             this.btnSurfsUp.Text = "Surfs Up!";
             this.btnSurfsUp.UseVisualStyleBackColor = true;
             this.btnSurfsUp.Click += new System.EventHandler(this.btnSurfsUp_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
+         // 
             // lblRunExp
             // 
             this.lblRunExp.AutoSize = true;
@@ -172,7 +167,6 @@
             this.btnIncRunExp.TabIndex = 4;
             this.btnIncRunExp.Text = "Add Run XP";
             this.btnIncRunExp.UseVisualStyleBackColor = true;
-            this.btnIncRunExp.Click += new System.EventHandler(this.btnIncRunExp_Click);
             // 
             // Form1
             // 
